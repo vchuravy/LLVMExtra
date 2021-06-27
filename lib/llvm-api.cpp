@@ -151,7 +151,7 @@ public:
     {
     }
 
-    bool runOnModule(Module &M)
+    bool runOnModule(Module &M) override
     {
         void *Ref = (void *)wrap(&M);
         bool Changed = Callback(Ref, Data);
@@ -171,7 +171,7 @@ public:
     {
     }
 
-    bool runOnFunction(Function &Fn)
+    bool runOnFunction(Function &Fn) override
     {
         void *Ref = (void *)wrap(&Fn);
         bool Changed = Callback(Ref, Data);
